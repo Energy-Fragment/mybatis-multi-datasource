@@ -1,0 +1,31 @@
+server:
+  port: 9998
+spring:
+  datasource:
+    db1:
+      jdbc-url: jdbc:mysql://your-address:3377/test?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=GMT%2B8
+      username: test
+      password: test
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    db2:
+      jdbc-url: jdbc:oracle:thin:@your-address:3378:orcl
+      username: test
+      password: test
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+# mybatis配置
+mybatis:
+  configuration:
+    # 输出方式，目前设置为控制台输出
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    org:
+      apache:
+        ibatis: debug
+    com:
+      mysql:
+        cj: debug
+      lzumetal:
+        springboot:
+          demodatabase:
+            mapper: debug

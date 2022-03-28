@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.energyfragment.mybatismultidatasource.framework.mapper.db1.SysUserMapper">
+    <resultMap id="BaseResultMap" type="com.energyfragment.mybatismultidatasource.framework.entity.db1.SysUser">
+        <result column="sys_user_id" jdbcType="VARCHAR" property="sysUserId" />
+        <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    </resultMap>
+    <select id="findById" resultMap="BaseResultMap">
+        SELECT
+            sys_user_id,
+            user_name
+        FROM
+            sys_user
+        WHERE
+            sys_user_id = #{sysUserId}
+    </select>
+</mapper>
